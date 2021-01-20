@@ -4,10 +4,10 @@ export const JobContext = createContext({});
 
 export default function JobContextProvider({ children }) {
   const API_URL = "https://us-central1-wands-2017.cloudfunctions.net/githubjobs?description=";
-  const [previousSearchItems, setPreviousSearchItems] = useState(null);
+  const [jobList, setJobList] = useState(null);
 
   return (
-    <JobContext.Provider value={{ API_URL, previousSearchItems, setPreviousSearchItems }}>
+    <JobContext.Provider value={{ API_URL, jobList, setJobList }}>
       {children}
     </JobContext.Provider>
   )

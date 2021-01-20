@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { JobContext } from '../contexts/JobContextProvider';
 
 export default function SearchForm() {
-  const { API_URL, setPreviousSearchItems } = useContext(JobContext);
+  const { API_URL, setJobList } = useContext(JobContext);
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSubmit = (e) => {
@@ -10,7 +10,7 @@ export default function SearchForm() {
 
     fetch(API_URL + searchTerm.replace(" ", "+"))
       .then(res => res.json())
-      .then(data => setPreviousSearchItems({ term: searchTerm, jobs: data }))
+      .then(data => setJobList({ term: searchTerm, jobs: data }))
   }
 
   return (

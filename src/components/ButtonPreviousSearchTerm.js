@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function ButtonPreviousSearchTerm({ previousSearchItems }) {
+export default function ButtonPreviousSearchTerm({ jobList }) {
   return (
     <button>
-      {previousSearchItems.term}
+      {jobList.term}
     </button>
   )
 }

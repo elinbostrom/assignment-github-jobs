@@ -1,8 +1,8 @@
 import React from 'react'
 import JobItem from './JobItem';
 
-export default function JobList({ previousSearchItems }) {
-  const jobs = Object.entries(previousSearchItems.jobs);
+export default function JobList({ jobList }) {
+  const jobs = Object.entries(jobList.jobs);
 
   return (
     <ul>
