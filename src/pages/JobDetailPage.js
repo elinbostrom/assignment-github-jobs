@@ -6,7 +6,7 @@ export default function JobDetailPage(props) {
   const [job, setJob] = useState();
 
   useEffect(() => {
-    fetch('https://jobs.github.com/positions/dcf7cacf-ac39-4e6e-a5df-83135f69cff0')
+    fetch(JOB_URL)
       .then(res => res.json())
       .then(data => console.log(data))
   }, [])
