@@ -1,0 +1,50 @@
+.job_detail_page {
+  max-width: 800px;
+  width: 100%;
+  margin: 3em auto;
+
+  button {
+    width: 250px;
+    color: white;
+    background: #53a4ad;
+    border: 0.5px solid darkslategrey;
+  }
+}
+
+.detail_page_item {
+  background: whitesmoke;
+  margin-block: 2em;
+  padding: 3em 2em;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px black;
+
+  header {
+    position: relative;
+    margin-bottom: 2em;
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  main {
+    line-height: 1.8;
+  }
+
+  .apply {
+    width: 100%;
+    color: white;
+    background: #53a4ad;
+    padding: 1.5em 1em;
+    margin-top: 1em;
+    text-align: center;
+    border-radius: 5px;
+
+    a,
+    p {
+      color: white;
+    }
+  }
+}

@@ -16,13 +16,19 @@ export default function JobItem(props) {
   }
 
   return (
-    <article>
+    <article className={props.detailpage ? 'detail_page_item' : 'job_list_item'}>
       <header>
-        <strong>{data.type}</strong>
-        <h2>{data.title}</h2>
-        {data.company_url && <a href={data.company_url}>{data.company_url}</a>}
-        <img src={data.company_logo} alt={data.company} />
-        {props.detailpage ? <ApplySection apply={data.how_to_apply} /> : <ButtonReadMore id={data.id} />}
+        <div>
+          <strong>{data.type}</strong>
+          <h2>{data.title}</h2>
+          {data.company_url && <a className="company_link" href={data.company_url}>{data.company_url}</a>}
+        </div>
+        <div>
+          {props.detailpage ? <ApplySection apply={data.how_to_apply} /> : <ButtonReadMore id={data.id} />}
+          <a className="image" href={data.company_url}>
+            <img src={data.company_logo} alt={data.company} />
+          </a>
+        </div>
       </header>
       {description && <main dangerouslySetInnerHTML={createMarkup(description)} />}
     </article>

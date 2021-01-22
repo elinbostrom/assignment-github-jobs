@@ -14,9 +14,8 @@ export default function JobDetailPage(props) {
   }, [])
 
   return (
-    <article>
+    <article className="job_detail_page">
       <Navigation />
-      Job Detail Page
       {job && <JobItem data={job} detailpage />}
     </article>
   )

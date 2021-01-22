@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { JobContext } from '../contexts/JobContextProvider';
+import ButtonPreviousSearchTerm from './ButtonPreviousSearchTerm';
 
 export default function SearchForm() {
   const { API_URL, setJobList, previousSearchItems, setPreviousSearchItems, jobObj } = useContext(JobContext);
@@ -52,12 +53,15 @@ export default function SearchForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        What job are you searching for?
-      <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Enter description" />
-      </label>
-      <button type="submit">Search</button>
-    </form>
+    <div className="form">
+      <form onSubmit={handleSubmit}>
+        <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="What job are you searching for?" />
+        <button type="submit">Search</button>
+      </form>
+      {previousSearchItems.length > 0 && <div className="btn_prev_search">
+        <p>Previous searchterms</p>
+        {previousSearchItems && previousSearchItems.map((searchItem, index) => <ButtonPreviousSearchTerm key={index} item={searchItem} />)}
+      </div>}
+    </div>
   )
 }

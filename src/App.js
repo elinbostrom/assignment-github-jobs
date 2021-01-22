@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import JobDetailPage from './pages/JobDetailPage';
 import StartPage from './pages/StartPage';
+import './App.scss';
 
 function App() {
   return (

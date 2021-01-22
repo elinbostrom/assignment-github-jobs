@@ -1,0 +1,33 @@
+.job_list {
+  max-width: 800px;
+  width: 100%;
+  padding: 0;
+}
+
+.job_list_item {
+  background: whitesmoke;
+  margin-block: 4em;
+  padding: 3em 2em;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px black;
+
+  header {
+    display: grid;
+    grid-template-columns: auto 150px;
+    position: relative;
+  }
+
+  .read_more {
+    position: absolute;
+    top: -3.5em;
+    right: -2.5em;
+    font-size: 16px;
+    width: 150px;
+    background: #53a4ad;
+    color: white;
+  }
+
+  img {
+    margin-top: 1em;
+  }
+}

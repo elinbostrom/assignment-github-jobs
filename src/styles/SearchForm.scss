@@ -1,0 +1,47 @@
+.form {
+  background: whitesmoke;
+  padding: 3em 2em;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px black;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+
+    input {
+      height: 50px;
+      padding-inline: 1em;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 1px 1px 2px lightgray;
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+    }
+
+    button {
+      margin-top: 1em;
+      background: #53a4ad;
+      color: white;
+    }
+  }
+
+  .btn_prev_search {
+    display: grid;
+    grid-template: auto 1fr / repeat(5, auto);
+    column-gap: 1em;
+
+    p {
+      grid-column: span 5;
+      font-size: 1rem;
+      color: gray;
+    }
+
+    button {
+      background: #a5d0dc;
+      font-size: 16px;
+      height: 40px;
+      color: white;
+    }
+  }
+}

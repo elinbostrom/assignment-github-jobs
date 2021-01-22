@@ -5,7 +5,7 @@ export default function JobList({ jobList }) {
   const jobs = jobList.jobs;
 
   return (
-    <ul>
+    <ul className="job_list">
       {jobs && Array.isArray(jobs) && jobs.map(job => {
         return (
           <JobItem key={job.id} data={job} />

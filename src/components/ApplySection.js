@@ -5,6 +5,6 @@ export default function ApplySection({ apply }) {
   const { createMarkup } = useContext(JobContext)
 
   return (
-    <div dangerouslySetInnerHTML={createMarkup(apply)} />
+    <div className="apply" dangerouslySetInnerHTML={createMarkup(apply)} />
   )
 }
