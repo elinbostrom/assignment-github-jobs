@@ -2,22 +2,60 @@ import React, { useContext, useState } from 'react'
 import { JobContext } from '../contexts/JobContextProvider';
 
 export default function SearchForm() {
-  const { API_URL, setJobList } = useContext(JobContext);
+  const { API_URL, setJobList, previousSearchItems, setPreviousSearchItems, jobObj } = useContext(JobContext);
   const [searchTerm, setSearchTerm] = useState("");
+
+  const storeInContext = (data) => {
+    setJobList(jobObj(searchTerm, data))
+    if (!previousSearchItems) {
+      setPreviousSearchItems(jobObj(searchTerm, data))
+    }
+    else {
+      setPreviousSearchItems(prevState => [...prevState, jobObj(searchTerm, data)]);
+    }
+  }
+
+  const checkSearchTerm = () => {
+    const previousSearchArray = Object.entries(previousSearchItems);
+    let obj;
+
+    previousSearchArray.forEach(searchItem => {
+      if (searchItem[1].term === searchTerm) {
+        obj = jobObj(searchTerm, searchItem[1].jobs)
+      }
+    })
+
+    if (obj?.term && obj.term === searchTerm) {
+      setJobList(obj)
+    }
+    else {
+      fetch(API_URL + searchTerm.replace(" ", "+"))
+        .then(res => res.json())
+        .then(data => storeInContext(data))
+    }
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(API_URL + searchTerm.replace(" ", "+"))
-      .then(res => res.json())
-      .then(data => setJobList({ term: searchTerm, jobs: data }))
+    if (0 < previousSearchItems.length) {
+      checkSearchTerm();
+    }
+
+    else {
+      fetch(API_URL + searchTerm.replace(" ", "+"))
+        .then(res => res.json())
+        .then(data => storeInContext(data))
+    }
+
+    setSearchTerm("");
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <label>
         What job are you searching for?
-      <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Javascript" />
+      <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Enter description" />
       </label>
       <button type="submit">Search</button>
     </form>
