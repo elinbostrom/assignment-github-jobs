@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+## GitHub Job Listing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# The task is to create a react app that lets the user search for jobs using the description. The
 
-## Available Scripts
+first view should contain one input:
 
-In the project directory, you can run:
+- Description
 
-### `yarn start`
+The API has the following structure:
+https://us-central1-wands-2017.cloudfunctions.net/githubjobs?description=javascript
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# G
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Add an input field where the user can enter something to search on DONE
+- Add a button to trigger the search DONE
+- The API expects "spaces" to be changed to "plus-signs" DONE
+- When the user searchs for a specific term (description),list the result returned from the API.
+  DONE
+- Make sure that the type value returned from the API is contained in a strong-element DONE
+- Make sure that the title value returned from the API is contained in a h2-element DONE
+- Make sure that the company_url value returned from the API is contained in a a-element DONE
+- Make sure that the description value returned from the API is contained in a section-element DONE
+- Make sure that the company_logo value returned from the API is added to the src attribute for a
+  img-element DONE
+- If the API returns an empty array, make sure to show a message to the users with the following
+  text: "No jobs found". DONE
+- Write test to make sure that all the components in your project are working as expected (at least
+  10 tests).
+- Create at least three components DONE
 
-### `yarn test`
+# VG
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- When the user clicks on a job posting the user is redirected to the detail page for that job
+  posting. DONE
+- Save the result from the API in context, check if the value the user is searching for is already
+  in context, if so, return it from the context instead for fetching it again. DONE
+- Deploy application to any hosting site (github pages, netlify, firebase, vercel etc)
 
-### `yarn build`
+# Tips
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- To render HTML that is returned from the API, please use dangerouslySetInnerHTML
+  (https://reactjs.org/docs/dom-elements.html)
+- To make sure urls are handled correctly on the hosting service, use HashRouter if necessary.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Presentation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Individual Presentations
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Code Walkthrough
+- Test Walkthrough
+- Feedback and thoughts or issues along the way
