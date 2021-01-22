@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import JobItem from '../components/JobItem';
+import Navigation from '../components/Navigation';
 
 export default function JobDetailPage(props) {
   const id = props.match.params.id;
@@ -14,6 +15,7 @@ export default function JobDetailPage(props) {
 
   return (
     <article>
+      <Navigation />
       Job Detail Page
       {job && <JobItem data={job} detailpage />}
     </article>
