@@ -5,15 +5,15 @@ import SearchForm from '../components/SearchForm'
 import { JobContext } from '../contexts/JobContextProvider';
 
 export default function StartPage() {
-  const { jobList } = useContext(JobContext);
+  const { jobList, previousSearchItems } = useContext(JobContext);
 
   return (
     <main>
       <h1>GitHub Job Listing</h1>
       <SearchForm />
-      {jobList && <ButtonPreviousSearchTerm jobList={jobList} />}
+      {previousSearchItems && previousSearchItems.map((searchItem, index) => <ButtonPreviousSearchTerm key={index} item={searchItem} />)}
       {jobList && <JobList jobList={jobList} />}
-      {jobList && Array.isArray(jobList.jobs) && jobList.jobs.length <= 0 && <h2>No jobs found</h2>}
+      {jobList.jobs && Array.isArray(jobList.jobs) && jobList.jobs.length <= 0 ? <h2>No jobs found</h2> : null}
     </main>
   )
 }
