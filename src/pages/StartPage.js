@@ -11,7 +11,7 @@ export default function StartPage() {
       <h1 className="headline">GitHub Job Listing</h1>
       <SearchForm />
       {jobList && <JobList jobList={jobList} />}
-      {jobList.jobs && Array.isArray(jobList.jobs) && jobList.jobs.length <= 0 ? <h2>No jobs found</h2> : null}
+      {jobList.jobs && Array.isArray(jobList.jobs) && jobList.jobs.length <= 0 ? <h2 className="no_jobs">No jobs found</h2> : null}
     </main>
   )
 }
