@@ -19,13 +19,13 @@ https://us-central1-wands-2017.cloudfunctions.net/githubjobs?description=javascr
 - Make sure that the type value returned from the API is contained in a strong-element DONE
 - Make sure that the title value returned from the API is contained in a h2-element DONE
 - Make sure that the company_url value returned from the API is contained in a a-element DONE
-- Make sure that the description value returned from the API is contained in a section-element DONE
+- Make sure that the description value returned from the API is contained in a div-element DONE
 - Make sure that the company_logo value returned from the API is added to the src attribute for a
   img-element DONE
 - If the API returns an empty array, make sure to show a message to the users with the following
   text: "No jobs found". DONE
 - Write test to make sure that all the components in your project are working as expected (at least
-  10 tests).
+  10 tests). DONE
 - Create at least three components DONE
 
 # VG
@@ -34,7 +34,7 @@ https://us-central1-wands-2017.cloudfunctions.net/githubjobs?description=javascr
   posting. DONE
 - Save the result from the API in context, check if the value the user is searching for is already
   in context, if so, return it from the context instead for fetching it again. DONE
-- Deploy application to any hosting site (github pages, netlify, firebase, vercel etc)
+- Deploy application to any hosting site (github pages, netlify, firebase, vercel etc) DONE
 
 # Tips
 

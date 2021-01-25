@@ -30,7 +30,7 @@ export default function JobItem(props) {
           </a>
         </div>
       </header>
-      {description && <main dangerouslySetInnerHTML={createMarkup(description)} />}
+      {description && <div dangerouslySetInnerHTML={createMarkup(description)} />}
     </li>
   )
 }

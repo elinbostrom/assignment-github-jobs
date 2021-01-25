@@ -58,8 +58,8 @@ describe("Test that JobItem 'default' contains right type of element and text", 
     expect(wrapper.find("img").prop('src')).toBe(jobObj.company_logo)
   })
 
-  it("should contain a main element with 'description + ...' text", () => {
-    expect(wrapper.find("main").text()).toBe(jobObj.description + '...')
+  it("should contain a div element with 'description + ...' text", () => {
+    expect(wrapper.find("div").at(2).text()).toContain(jobObj.description + '...')
   })
 
   it("should contain a ButtonReadMore component with 'id' prop", () => {
