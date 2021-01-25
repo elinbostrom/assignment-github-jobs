@@ -1,5 +1,7 @@
 import React, { useContext } from 'react'
 import { JobContext } from '../contexts/JobContextProvider'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHistory } from '@fortawesome/free-solid-svg-icons'
 
 export default function ButtonPreviousSearchTerm({ item }) {
   const { setJobList } = useContext(JobContext);
@@ -8,7 +10,7 @@ export default function ButtonPreviousSearchTerm({ item }) {
     <>
       {item &&
         <button onClick={() => setJobList(item)}>
-          {item.term}
+          <FontAwesomeIcon icon={faHistory} />  {item.term}
         </button>}
     </>
   )
