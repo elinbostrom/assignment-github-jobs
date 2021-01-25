@@ -5,7 +5,7 @@ import ButtonPreviousSearchTerm from '../components/ButtonPreviousSearchTerm';
 import { JobContext } from '../contexts/JobContextProvider';
 
 export default function StartPage() {
-  const { previousSearchItems, jobList, setJobList } = useContext(JobContext);
+  const { previousSearchItems, jobList } = useContext(JobContext);
 
   return (
     <main className="startpage">

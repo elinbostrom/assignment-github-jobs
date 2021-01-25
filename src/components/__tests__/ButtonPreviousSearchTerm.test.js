@@ -22,7 +22,7 @@ describe("Test ButtonPreviousSearchTerm.js", () => {
   })
 
   it("innerHTML is 'javascript' when searchterm is 'javascript'", () => {
-    expect(wrapper.find("button").text()).toBe("javascript")
+    expect(wrapper.find("button").text()).toContain("javascript")
   })
 
 })
