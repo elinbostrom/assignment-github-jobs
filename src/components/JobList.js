@@ -2,7 +2,7 @@ import React from 'react'
 import JobItem from './JobItem';
 
 export default function JobList({ jobList }) {
-  const jobs = jobList.jobs;
+  const jobs = jobList?.jobs;
 
   return (
     <ul className="job_list">

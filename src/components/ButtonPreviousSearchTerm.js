@@ -5,8 +5,11 @@ export default function ButtonPreviousSearchTerm({ item }) {
   const { setJobList } = useContext(JobContext);
 
   return (
-    <button onClick={() => setJobList(item)}>
-      {item.term}
-    </button>
+    <>
+      {item &&
+        <button onClick={() => setJobList(item)}>
+          {item.term}
+        </button>}
+    </>
   )
 }

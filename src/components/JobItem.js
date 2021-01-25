@@ -16,7 +16,7 @@ export default function JobItem(props) {
   }
 
   return (
-    <article className={props.detailpage ? 'detail_page_item' : 'job_list_item'}>
+    <li className={props.detailpage ? 'detail_page_item' : 'job_list_item'}>
       <header>
         <div>
           <strong>{data.type}</strong>
@@ -31,6 +31,6 @@ export default function JobItem(props) {
         </div>
       </header>
       {description && <main dangerouslySetInnerHTML={createMarkup(description)} />}
-    </article>
+    </li>
   )
 }

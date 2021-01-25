@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { JobContext } from '../contexts/JobContextProvider';
-import ButtonPreviousSearchTerm from './ButtonPreviousSearchTerm';
 
 export default function SearchForm() {
-  const { API_URL, setJobList, previousSearchItems, setPreviousSearchItems, jobObj } = useContext(JobContext);
+  const { API_URL, previousSearchItems, setPreviousSearchItems, jobObj, setJobList } = useContext(JobContext);
   const [searchTerm, setSearchTerm] = useState("");
 
   const storeInContext = (data) => {
@@ -43,6 +42,8 @@ export default function SearchForm() {
       checkSearchTerm();
     }
 
+    else if (searchTerm.length === 0 || searchTerm === " ") return
+
     else {
       fetch(API_URL + searchTerm.replace(" ", "+"))
         .then(res => res.json())
@@ -53,15 +54,12 @@ export default function SearchForm() {
   }
 
   return (
-    <div className="form">
-      <form onSubmit={handleSubmit}>
-        <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="What job are you searching for?" />
-        <button type="submit">Search</button>
-      </form>
-      {previousSearchItems.length > 0 && <div className="btn_prev_search">
-        <p>Previous searchterms</p>
-        {previousSearchItems && previousSearchItems.map((searchItem, index) => <ButtonPreviousSearchTerm key={index} item={searchItem} />)}
-      </div>}
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        placeholder="What job are you searching for?" />
+      <button type="submit">Search</button>
+    </form>
   )
 }
